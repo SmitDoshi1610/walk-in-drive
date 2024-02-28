@@ -1,0 +1,128 @@
+<div class="registration__header">
+    <img src="../../assets/images/back.svg" alt="">
+    <p>Create an account</p>
+    <div class="prev__next__button">
+        <a href="/"><button class="btn">Cancel</button></a>
+        <button class="btn" [hidden]="stepCounter < 3" type="submit" (click)="registeruser()">create</button>
+    </div>
+</div>
+
+<div class="registration__body" [ngSwitch]="stepCounter">
+    <div class="registration__process">
+        <div>
+            <div class="process__number">1</div>
+            <p class="process__title">Personal Information</p>
+        </div>
+        <!-- <hr class="line"> -->
+        <div>
+            <div class="process__number">2</div>
+            <p class="process__title">Qualifications</p>
+        </div>
+        <div>
+            <div class="process__number">3</div>
+            <p class="process__title">Review and Proceed</p>
+        </div>
+    </div>
+
+    <form class="personal__information__container" *ngSwitchCase='1' name="register">
+        <div class="personal__information__left">
+            <div class="form__control">
+                <label for="firstname">First Name*</label><br>
+                <input type="text" name="firstname" id="firstname" [(ngModel)]="personalInformation.firstName">
+            </div>
+
+            <div class="form__control">
+                <label for="lastname">Last Name*</label><br>
+                <input type="text" name="lastname" id="lastname" [(ngModel)]="personalInformation.lastName">
+            </div>
+
+            <div class="form__control">
+                <label for="email">Email*</label><br>
+                <input type="email" name="email" id="email" required="true" [(ngModel)]="personalInformation.email" #email = "ngModel">
+                <span [hidden]="email.invalid">Touched</span>
+            </div>
+
+            <div class="form__control">
+                <label for="password">Password*</label><br>
+                <input type="password" name="password" id="password" [(ngModel)]="personalInformation.password">
+            </div>
+
+            <div class="form__control">
+                <label for="mobile">Phone Number*</label><br>
+                <input type="text" name="mobile" id="mobile" [(ngModel)]="personalInformation.phone">
+            </div>
+
+            <div class="form__control">
+                <label>
+                    <input type="file" class="upload__resume" name="resume" [(ngModel)]="personalInformation.resume">
+                    <fa-icon [icon]="faArrowUp" class="icon"></fa-icon>
+                    <a class="upload__resume_link">Upload Resume</a> <span>{{resumeFileName}}</span>
+                </label>
+            </div>
+
+            <div class="form__control">
+                <label for="portfolioUrl">Enter Portfolio URL (if any)</label> <br> 
+                <input type="text" name="portfolioUrl" id="portfolioUrl" [(ngModel)]="personalInformation.portflioUrl">
+            </div>
+
+            <div class="form__control">
+                <label>Preferred Job Roles*</label><br>
+                @for(data of registerData?.preferedJobRoles; track data; let i = $index)
+                {
+                <input type="checkbox" name="{{data}}" id="{{data}}" value="{{data}}" (change)="convertBooleanToIndex()"
+                    [(ngModel)]="personalInformation.preferredJobRoles[i]"><label for="{{data}}">{{data}}</label> <br>
+                }
+            </div>
+
+            <div class="form__control">
+                <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee
+                    Who Referred You</label> <br>
+
+                <input type="text" name="referral" id="referral" [(ngModel)]="personalInformation.referredBy">
+            </div>
+
+            <div class="form__control">
+                <input type="checkbox" name="mailUpdate" id="mailUpdate"
+                    [(ngModel)]="personalInformation.emailNotification">
+                <label for="mailUpdate">Send me job related updates via mail</label>
+            </div>
+
+        </div>
+        <div class="personal__information__right">
+
+            @if(url)
+            {
+            <img src={{url}} alt="upload profile image"><br>
+            }@else {
+            <img src="../../assets/images/upload_profile.png" alt="upload profile image"><br>
+            }
+            <label>
+                <p>{{fileName}}</p>
+                <input type="file" (change)="showFile($event)" class="upload__image" name="portfolioImage"
+                    [(ngModel)]="personalInformation.profilePicture" accept="image/*">
+                <a class="upload__image_link">UPLOAD DISPLAY PICTURE</a>
+            </label>
+            <p>Max. image size: 5 MB</p>
+        </div>
+    </form>
+
+
+    <form action="" *ngSwitchCase="2" class="qualification__information">
+        <!-- Education Qualification Details  -->
+        <educational-qualification [educationChildData]="registerData"></educational-qualification>
+
+        <!-- Professional Qualification Details -->
+        <professional-qualification [professionalChildData]="registerData"></professional-qualification>
+
+
+    </form>
+
+    <form action="" *ngSwitchCase="3">
+        <review-and-proceed [reviewChildData]="registerData" ></review-and-proceed>
+    </form>
+
+    <div class="btn__container">
+        <button type="button" class="btn__next btn" (click)="previousStep()" *ngIf="stepCounter > 1">previous</button>
+        <button type="button" class="btn__next btn" (click)="nextStep();" *ngIf="stepCounter < 3">next</button>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.hall__ticket__container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #EEEEEE;
+}
+.accordian__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -2rem;
+}
+.accordian__body {
+    background-color: #FFFFFF;
+    margin: 0 1rem;
+    padding: 1rem;
+    box-shadow: 0px 4px 6px #0000003D;
+    width: 95%;
+}
+.accordian__title{
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.accordian__content{
+    font-size: 0.875rem;
+    color: black;
+    font-weight: 600;
+    text-align: justify;
+}
+.title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 3.5rem;
+}
+.icon{
+    color: #FFFFFF;
+    font-size: 3rem;
+}
+.correct{
+    background-color: #18BE2E;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -2rem;
+}
+hr{
+    margin: 0.5rem 0.125rem;
+    width: 100%;
+    opacity: 0.1;
+    border: 1px solid black;
+}
+.btn {
+    width: 12rem;
+    height: 1.75rem;
+    background-color: #3FD28B;
+    padding: 0.125rem;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 5px #0000003D;
+    cursor: pointer;
+    font-weight: 600;
+}
+.hall__ticket__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}

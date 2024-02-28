@@ -1,0 +1,234 @@
+@import url('../../styles.css');
+
+.registration__header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #3C4E62 0% 0%;
+    color: #ffff;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    box-shadow: 0px 3px 5px #0000003D;
+    border-radius: 2px;
+    padding: 0.25rem 1rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+
+}
+
+.prev__next__button * {
+    margin-left: 1rem;
+}
+
+
+.registration__body {
+    width: 100%;
+    background-color: #EEEEEE;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registration__process,
+.personal__information__container {
+
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    height: auto;
+
+}
+
+.registration__process div {
+
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.process__number {
+
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 12px;
+}
+
+.personal__information__container {
+
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 2rem 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+
+}
+
+.personal__information__right>img {
+
+    width: 10rem;
+    height: 10rem;
+}
+
+.upload__image,
+.upload__resume {
+    display: none;
+}
+
+.upload__image_link {
+    color: #1F7A54;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.icon {
+    color: #1F7A54;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.personal__information__left {
+
+    width: 30rem;
+}
+
+.form__control {
+
+    margin-bottom: 2rem;
+}
+
+.form__control input {
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    padding-left: 0.5rem;
+}
+
+label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #666666;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+select{
+
+    width: 30rem;
+    height: 1.5rem;
+}
+
+input[type='radio'] {
+
+    margin-top: 1rem;
+}
+
+.form__control input[type='radio'], summary {
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
+
+.upload__resume_link {
+
+    margin-left: 0.5rem;
+    color: #1F7A54;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn__next {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.btn__container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Qualification CSS */
+.qualification__information {
+
+    margin-top: 1rem;
+}
+.qualification__information__container{
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+
+}
+
+.qualification__information__container input,
+.qualification__information__container select{
+
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+details>summary {
+    list-style: none;
+    cursor: pointer;
+    background-color: #DBEFFF;
+    box-shadow: 0px 4px 6px #00000029;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+details>summary:hover{
+    box-shadow: 0px 4px 6px #1F7A54;
+}
+
+.col-2{
+    display: flex;
+    gap: 2rem;
+}
+select{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 0.5rem;
+}
+
+.application__type{
+
+    background-color: #FFFFFF;
+    padding: 0.5rem;
+}
+/* Fresher Qualification Css */
+.fresher__qualification input,
+.fresher__qualification label
+{
+   margin: 0.5rem;
+   font-size: 1rem;
+   color: black;
+   font-weight: 600;
+
+}

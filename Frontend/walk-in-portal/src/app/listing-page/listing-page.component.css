@@ -1,0 +1,110 @@
+.list__container{
+    background-color: #EEEEEE;
+    height: max-content;
+    padding: 1rem;
+}
+
+
+.list__card{
+   
+    background-color: #FFFFFF;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 4px 6px #0000003D;
+}
+.list__card__roles{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.title{
+    color: #1F7A54;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.list__card__content-time{
+    margin-top: 1rem;
+}
+.date__location__container{
+    display: flex;
+    margin-top: 0.125rem;
+    gap: 1rem;
+}
+.location{
+    display: flex;
+    justify-content: center;
+    color: #666666;
+    font-size: 0.75rem;
+}
+.location{
+    margin-left: 0.5rem;
+}
+.location__img{
+    width: 1rem;
+    height: 1rem;
+}
+.date{
+    font-size: 0.875rem;
+    color: black;
+    font-weight: 600;
+}
+hr{
+    margin: 1rem 0.125rem;
+    opacity: 0.2;
+}
+.job__heading{
+    font-size: 0.75rem;
+    color: #666666;
+}
+.important__message{
+
+    background-color: #EEDD6B;
+    border-radius: 0.563rem;
+    width: max-content;
+    padding: 0.125rem;
+    font-size: 0.625rem;
+    margin: 0.75rem;
+    font-weight: 600;
+}
+.role__container{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.role__name{
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.list__card__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+.btn{
+    width: 10rem;
+    height: 1.75rem;
+    background-color: #3FD28B;
+    padding: 0.125rem;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 5px #0000003D;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn a{
+    color: black;
+    text-decoration: none;
+}
+.expired__job{
+    color: #D10107;
+    background-color: #FFE4E6;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: fit-content;
+    padding: 0.125rem;
+    border-radius: 0.125rem;
+    float: right;
+    position: relative;
+    top: -1.5rem;
+}

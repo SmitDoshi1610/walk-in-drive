@@ -1,0 +1,139 @@
+<details>
+  <summary>Professional Qualifications</summary>
+  <div class="form__control">
+    <form action="">
+      <div class="application__type">
+        <label for="applicationType">Applicant Type*</label>
+        <div class="form__control">
+          <input type="radio" name="applicationType" id="fresher" value="Fresher" [(ngModel)]="professionalQualification.applicationType" />
+          <label for="fresher">Fresher</label>
+          <input type="radio" name="applicationType" id="experienced" value="Experienced"
+            [(ngModel)]="professionalQualification.applicationType" />
+          <label for="experienced">Experienced</label>
+        </div>
+      </div>
+    </form>
+
+    <!-- Fresher Qualification  -->
+
+    <div *ngIf="professionalQualification.applicationType === 'Fresher'" class="fresher__qualification__container">
+      <form action="">
+        <div class="form__control">
+          <label>Select All The Technologies You Are Familiar In</label><br />
+          @for(technology of professionalChildData?.tecnologiesFamiliar; track technology; let index = $index)
+          {
+          <input type="checkbox" id="{{technology}}" value="{{technology}}"
+            name="{{technology}}"
+            (change)="fresherFConvertBooleanToIndex()"
+            [(ngModel)]="professionalQualification.fresherTechnologiesFamiliar[index]">
+            <label for="{{technology}}">{{technology}}</label> <br>
+          }
+          <label for="other_technology">If others, please mention</label><br />
+          <input type="text" name="familiar_technologies" id="other_technology" [(ngModel)]="professionalQualification.fresherOtherFamiliar"/>
+        </div>
+
+        <div class="form__control">
+          <label>Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br />
+          <input type="radio" name="isGivenTest" id="yes" value="yes"
+            [(ngModel)]="professionalQualification.haveAppliedTestBefore" />
+          <label for="yes">Yes</label>
+          <input type="radio" name="isGivenTest" id="no" value="no" [(ngModel)]="professionalQualification.haveAppliedTestBefore" />
+          <label for="no">No</label>
+        </div>
+
+        <div class="form__control">
+          <label for="roleAppliedFor">If Yes, which role did you apply for?</label><br />
+          <input type="text" name="rol  eAppliedFor" id="roleAppliedFor"
+            [(ngModel)]="professionalQualification.fresherRoleAppliedFor" />
+        </div>
+      </form>
+    </div>
+
+    <!-- Experience Qualification  -->
+
+    <div *ngIf="professionalQualification.applicationType === 'Experienced'" class="experience__qualification__container">
+      <form action="">
+        <div class="form__control">
+          <label for="yearsOfExperience">Years of Experience*</label><br />
+          <input type="text" name="yearsOfExperience" id="yearsOfExperience" [(ngModel)]="professionalQualification.yearsOfExperience" />
+        </div>
+
+        <div class="form__control">
+          <label for="currentCTC">Current CTC* (In Rupees)</label><br />
+          <input type="text" name="currentCTC" id="currentCTC" [(ngModel)]="professionalQualification.currentCTC"/>
+        </div>
+
+        <div class="form__control">
+          <label for="expCTC">Expected CTC* (In Rupees)</label><br />
+          <input type="text" name="expectedCTC" id="expCTC" [(ngModel)]="professionalQualification.expectedCTC" />
+        </div>
+
+        <div class="form__control form-expert">
+          <label>Select All The Technologies You Expertise In*</label><br />
+          @for(technology of professionalChildData?.tecnologiesExpert; track technology; let index = $index)
+          {
+          <input type="checkbox" id="Expert {{technology}}" name="Expert {{technology}}" value="{{technology}}"
+            (change)="expertConvertBooleanToIndex()"
+            [(ngModel)]="professionalQualification.technologiesExpert[index]" ><label
+            for="Expert {{technology}}">{{technology}}</label> <br>
+          }
+         
+          <label for="other_technology">If others, please mention</label><br />
+          <input type="text" name="familiar_technologies" id="other_technology"
+            [(ngModel)]="professionalQualification.othersExpertise" />
+        </div>
+
+        <div class="form__control">
+          <label>Select All The Technologies You Familiar In*</label><br />
+          @for(technology of professionalChildData?.tecnologiesFamiliar; track technology; let index = $index)
+          {
+          <input type="checkbox" id="Fresher {{technology}}" name="Fresher {{technology}}" value="{{technology}}"
+            (change)="experienceFConvertBooleanToIndex()"
+            [(ngModel)]="professionalQualification.experienceTechnologiesFamiliar[index]"><label
+            for="Fresher {{technology}}">{{technology}}</label> <br>
+          }
+          <label for="other_technology">If others, please mention</label><br />
+          <input type="text" [(ngModel)]="professionalQualification.experienceOtherFamiliar" name="familiar_technologies"
+            id="other_technology" />
+        </div>
+
+        <div class="form__control">
+          <label>Are you currently on notice period?*</label><br />
+          <input type="radio" name="noticePeriod" [(ngModel)]="professionalQualification.isInNoticePeriod" id="noticePeriod"
+            value="yes" /><label for="yes">Yes</label>
+          <input type="radio" name="noticePeriod" [(ngModel)]="professionalQualification.isInNoticePeriod" id="noticePeriod"
+            value="no" /><label for="no">No</label>
+        </div>
+
+        <div class="form__control col-2">
+          <div>
+            <label for="noticePeriodEnd">If Yes, when will your notice period end?*</label><br />
+            <input type="date" name="noticePeriod" id="noticePeriodEnd" [(ngModel)]="professionalQualification.noticePeriodEnd" />
+          </div>
+          <div>
+            <label for="noticePeriodTime">How long is your notice period?* (Mention in months)</label><br />
+            <select name="noticePeriodTime" id="noticePeriodTime" name="monthSelector" [(ngModel)]="professionalQualification.noticePeriodDuration">
+              @for(month of professionalChildData?.noticePeriod; track month)
+              {
+              <option value="{{month}}">{{month}} months</option>
+              }
+            </select> 
+          </div>
+        </div>
+
+        <div class="form__control">
+          <label>Have You Appeared For Any Test By Zeus in the past 12 months?*</label><br />
+          <input type="radio" name="appliedTest" [(ngModel)]="professionalQualification.haveAppliedTestBefore" id="yes"
+            value="yes" /><label for="yes">Yes</label>
+          <input type="radio" name="appliedTest" [(ngModel)]="professionalQualification.haveAppliedTestBefore" id="no"
+            value="no" /><label for="no">No</label>
+        </div>
+
+        <div class="form__control">
+          <label for="roleAppliedFor">If Yes, which role did you apply for?</label><br />
+          <input type="text" name="roleAppliedFor" id="roleAppliedFor" [(ngModel)]="professionalQualification.experienceRoleAppliedFor" />
+        </div>
+      </form>
+    </div>
+  </div>
+</details>

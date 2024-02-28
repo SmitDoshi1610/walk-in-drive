@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./assets/Quicksand-VariableFont_wght.ttf');
+}
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+
+:root{
+    --background-primary: #EEEEEE;
+    --border-primary: #3AC7EC;
+    --primary-color: #3FD28B;
+    --secondary-color: #1F7A54;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    accent-color: var(--secondary-color);
+    width: 1rem;
+    height: 1rem;
+    margin: 1rem;
+    line-height: normal;
+ }
+
+ button{
+    cursor: pointer;
+ }
+ 
+ button a{
+    color: black;
+    text-decoration: none;
+    outline: none;
+ }

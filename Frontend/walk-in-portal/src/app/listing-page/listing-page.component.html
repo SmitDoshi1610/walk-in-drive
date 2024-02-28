@@ -1,0 +1,143 @@
+<div class="list__container">
+    <div class="list__wrapper">
+
+        @for(drive of drives; track drive.id)
+        {
+            <div class="list__card">
+                <div class="list__card__content">
+                    <p class="title">{{drive.name}}</p>
+                    <div class="list__card__content-time">
+                        <p>Date & Time :</p>
+                        <div class="date__location__container">
+                            <p class="date">{{drive.startDate.toString().substring(0, drive.startDate.toString().indexOf('T'))}} to {{drive.endDate.toString().substring(0, drive.endDate.toString().indexOf('T'))}}</p>
+                            <div class="location">
+                                <fa-icon [icon]="locationIcon" class="icon location__img"></fa-icon>
+                                <p>{{drive.location}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+    
+                <p class="job__heading">Job Roles:</p>
+                <div class="list__card__roles">
+                @for(role of drive.jobPreference; track role)
+                {
+                    <div class="role__container">
+                        <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                        <p class="role__name">{{role}}</p>
+                    </div>
+                }
+                </div>
+                <div class="list__card__button">
+                    <button class="btn"><a routerLink="job/{{drive.id}}">VIEW MORE DETAILS</a></button>
+                </div>
+            </div>
+        }
+
+        <!-- <div class="list__card">
+            <p class="expired__job">Expires in 5 days</p>
+            <div class="list__card__content">
+                <p class="title">Walk In for Designer Job Role</p>
+                <div class="list__card__content-time">
+                    <p>Date & Time :</p>
+                    <div class="date__location__container">
+                        <p class="date">10-Jul-2021 to 11-Jul-2021</p>
+                        <div class="location">
+                            <fa-icon [icon]="locationIcon" class="icon location__img"></fa-icon>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <p class="job__heading">Job Roles:</p>
+            <div class="list__card__roles">
+
+                <div class="role__container">
+                    <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                    <p class="role__name">Instructional Designer</p>
+                </div>
+                <div class="role__container">
+                    <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                    <p class="role__name">Instructional Designer</p>
+                </div>
+            </div>
+            <div class="list__card__button">
+                <button class="btn"><a routerLink="job/1">VIEW MORE DETAILS</a></button>
+            </div>
+        </div>
+
+        <div class="list__card">
+            <div class="list__card__content">
+                <p class="title">Walk In for Multiple Job Roles</p>
+                <div class="list__card__content-time">
+                    <p>Date & Time :</p>
+                    <div class="date__location__container">
+                        <p class="date">03-Jul-2021 to 04-Jul-2021</p>
+                        <div class="location">
+                            <fa-icon [icon]="locationIcon" class="icon location__img"></fa-icon>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <p class="job__heading">Job Roles:</p>
+            <div class="list__card__roles">
+                <div class="role__container">
+                    <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                    <p class="role__name">Instructional Designer</p>
+                </div>
+                <div class="role__container">
+                    <img src="../../assets/images/Software Quality Engineer.svg" class="role__img" alt="">
+                    <p class="role__name">Software Engineer</p>
+                </div>
+                <div class="role__container">
+                    <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                    <p class="role__name">Software Quality Engineer</p>
+                </div>
+            </div>
+            <div class="important__message">
+                <p>Internship Opportunity for MCA Students</p>
+            </div>
+            <div class="list__card__button">
+                <button class="btn">VIEW MORE DETAILS</button>
+            </div>
+        </div>
+
+        <div class="list__card">
+            <div class="list__card__content">
+                <p class="title">Walk In for Design and Development Job Role</p>
+                <div class="list__card__content-time">
+                    <p>Date & Time :</p>
+                    <div class="date__location__container">
+                        <p class="date">10-Jul-2021 to 11-Jul-2021</p>
+                        <div class="location">
+                            <fa-icon [icon]="locationIcon" class="icon location__img"></fa-icon>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <p class="job__heading">Job Roles:</p>
+            <div class="list__card__roles">
+                <div class="role__container">
+                    <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                    <p class="role__name">Instructional Designer</p>
+                </div>
+                <div class="role__container">
+                    <img src="../../assets/images/Software Quality Engineer.svg" class="role__img" alt="">
+                    <p class="role__name">Software Engineer</p>
+                </div>
+            </div>
+            <div class="list__card__button">
+                <button class="btn">VIEW MORE DETAILS</button>
+            </div>
+        </div> -->
+    </div>
+</div>

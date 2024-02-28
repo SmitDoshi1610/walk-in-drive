@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WALK-IN-PORTAL-API.props" />
+</Project>

@@ -1,0 +1,98 @@
+<div class="review__processd__container">
+    <div class="personal__information__header">
+        <p>Personal Information</p>
+        <div class="header__right">
+            <button>
+            <fa-icon [icon]="editIcon" class="icon"></fa-icon>
+            Edit
+        </button>
+        </div>
+    </div>
+
+    <div class="personal__information__body">
+        <div class="personal__information__left">
+            <div class="form__control">
+                <label for="firstname">First Name*</label><br>
+                <input type="text" [readOnly]="true" name="firstname" id="firstname" [value]="personalInformation.firstName">
+            </div>
+
+            <div class="form__control">
+                <label for="lastname">Last Name*</label><br>
+                <input type="text" [readOnly]="true" name="lastname" id="lastname" [value]="personalInformation.lastName">
+            </div>
+
+            <div class="form__control">
+                <label for="email">Email*</label><br>
+                <input type="email" [readOnly]="true" name="email" id="email" [value]="personalInformation.email">
+            </div>
+
+            <div class="form__control">
+                <label for="mobile">Phone Number*</label><br>
+                <input type="text" [readOnly]="true" name="mobile" id="mobile" [value]="personalInformation.phone">
+            </div>
+
+            <div class="form__control">
+                <label>
+                    <input type="file" class="upload__resume" name="resume" [value]="personalInformation.resume">
+                    <!-- <fa-icon [icon]="faArrowUp" class="icon"></fa-icon> -->
+                    <a class="upload__resume_link">Upload Resume</a>
+                </label>
+            </div>
+
+            <div class="form__control">
+                <label for="portfolioUrl">Enter Portfolio URL (if any)</label> <br>
+                <input type="text" name="portfolioUrl" id="portfolioUrl" [readOnly]="true" [value]="personalInformation.portflioUrl">
+            </div>
+
+            <div class="form__control">
+                <label for="jobRoles">Preferred Job Roles*</label><br>
+                <!-- @for(job of personalInformation!.preferredJobRoles; track job)
+                {
+                    @if(job)
+                    {
+                        <input type="text" name="jobRoles-one" id="{{reviewChildData.preferedJobRoles[job-1]}}"
+                        [value]="reviewChildData.preferedJobRoles[job-1]" [readOnly]="true"> <br>   
+                    }
+                } -->
+            </div>
+
+            <div class="form__control">
+                <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee
+                    Who Referred You</label> <br>
+
+                <input type="text" name="referral" id="referral" [readOnly]="true" [value]="personalInformation.referredBy">
+            </div>
+
+            <div class="form__control">
+                <label for="mailUpdate">Send me job related updates via mail</label><br>
+                <input type="text" name="mailUpdate" id="mailUpdate" [readOnly]="true"
+                    [value]="personalInformation.emailNotification">
+            </div>
+
+        </div>
+        <div class="personal__information__right">
+            <img src="../../assets/images/pngwing.com.png" alt="upload profile image"><br>
+            <label>
+                <input type="file" class="upload__image" name="portfolioImage"
+                    [(ngModel)]="personalInformation.profilePicture">
+                <a class="upload__image_link">UPLOAD DISPLAY PICTURE</a>
+            </label>
+            <p>Max. image size: 5 MB</p>
+        </div>
+    </div>
+
+    <div class="qualification__information__header">
+        <p>Qualifications</p>
+        <div class="header__right">
+            <button>
+            <fa-icon [icon]="editIcon" class="icon"></fa-icon>
+            Edit
+        </button>
+        </div>
+    </div>
+
+    <div class="qualification__information__body">
+        <educational-qualification></educational-qualification>
+        <professional-qualification></professional-qualification>
+    </div>
+</div>

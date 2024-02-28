@@ -1,0 +1,19 @@
+.navbar__container_login{
+    background: url('../../assets/images/navbar-background.svg');
+    background-size: cover;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+.navbar__container_all{
+    background-color: #1F2834;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar__right{
+    color: white;
+}

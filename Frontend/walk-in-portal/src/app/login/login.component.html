@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="login__container">
+        <h1 class="heading">Log in</h1>
+
+        <form action="" class="form__container">
+            <div class="form__control">
+                <input type="email" name="email" id="email" placeholder="Email ID*" [(ngModel)]="login.email">
+                <p><a href="" class="forgot__link">FORGOT EMAIL ID?</a></p>
+            </div>
+
+            <div class="form__control">
+                <input type="{{passwordInputType}}" name="password" id="password" placeholder="Password*" [(ngModel)]="login.password">
+                <img class="password__preview" src="../../assets/images/preview.svg" alt="" (click)="togglePassword()" />
+                <p><a href="" class="forgot__link">FORGOT PASSWORD?</a></p>
+            </div>
+
+            <div>
+                <label for="remember">
+                    <input type="checkbox" name="remember" id="remember">
+                    Remember Me
+                </label>
+            </div>
+
+            <div class="display__flex">
+                <button class="btn__login" (click)="loginUser($event)">
+                    LOG IN
+                </button>
+            </div>
+
+            <div class="display__flex login__footer">
+                <p>Not registered yet?</p>
+                <a href="/registration">create an account</a>
+            </div>
+        </form>
+    </div>
+    
+    <footer class="container__footer">
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+    </footer>
+</div>

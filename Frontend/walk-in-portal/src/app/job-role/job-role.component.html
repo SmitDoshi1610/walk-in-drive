@@ -1,0 +1,181 @@
+<div class="job__container">
+    <div class="job__card" id="{{jobRole.id}}">
+        <input type="hidden" name="job_Id">
+        <div class="job__card__content">
+            <div class="job__card__header">
+                <p class="title">{{jobRole!.name}}</p>
+                <button class="btn" (click)="applyForJob()">APPLY</button>
+            </div>
+            <div class="job__card__content-time">
+                <p>Date & Time :</p>
+                <div class="date__location__container">
+                    <p class="date">{{jobRole!.startDate}} to {{jobRole!.endDate}}</p>
+                    <div class="location">
+                        <fa-icon [icon]="locationIcon" class="icon location__img"></fa-icon>
+                        <p>{{jobRole!.location}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <p class="job__heading">Job Roles:</p>
+        <div class="list__card__roles">
+            @for(role of jobRole.walkInJob; track role)
+            {
+            <div class="role__container">
+                <img src="../../assets/images/Instructional Designer.svg" class="role__img" alt="">
+                <p class="role__name">{{role.roleName}}</p>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="application__process_accordian" (click)="isApplicationAccordianVisible($event)">
+        <div class="accordian__header">
+            <p>Pre-requisites & Application Process</p>
+            <div>
+                <span class="line"></span>
+                @if(isapplicationBodyVisible){<fa-icon [icon]="accordianIconDown"
+                    class="icon accordian__icon"></fa-icon>}
+                @else{<fa-icon [icon]="accordianIconUp" class="icon accordian__icon"></fa-icon>}
+            </div>
+        </div>
+    </div>
+
+    <div class="accordian__body" [hidden]="isapplicationBodyVisible">
+        <div>
+            <p class="accordian__title">General Instructions :</p>
+            <div class="accordian__content">
+                <p>-We have a two–year indemnity for permanent candidates. We will provide training to the
+                    selected
+                    candidates. </p>
+                <p>-Candidates who have appeared for any test held by Zeus Learning in the past 12 months will
+                    not
+                    be allowed to appear for this recruitment test</p>
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <p class="accordian__title">Instructions for the Exam :</p>
+            <div class="accordian__content">
+                <p>-Candidates are requested to log in half an hour prior to the exam start time as they would
+                    need
+                    to capture their image using a web camera. By taking this test, you are permitting the
+                    examination system to capture your video for invigilation purposes. </p>
+                <p>-Candidates would not be able to appear for the exam if the web camera attached to their
+                    system
+                    is not functional. </p>
+                <p>-Candidates are requested to log in half an hour prior to the exam start time as they would
+                    need
+                    you are permitting the
+                    examination system to capture your video for invigilation purposes. </p>
+                <p>-Candidates are requested to log in half an hour prior to the exam start time as they would
+                    need
+                    to capture their image using a web camera. By taking this test, you are permitting the
+                    examination system to capture your video for invigilation purposes. </p>
+                <p>-Candidates are requested to log in half an hour prior to the exam start time. </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+            <p class="accordian__title">Minimum System Requirements :</p>
+            <div class="accordian__content">
+                <p>-Personal Laptop or Desktop computer in working condition with good quality camera (you can
+                    use Windows 7 and above). </p>
+                <p>-The latest version of Google Chrome Browser only. </p>
+                <p>-Please note that Internet speed should be minimum 1 Mbps</p>
+                <p>-Do not use a MacBook or iPad for the proctored exam.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+            <p class="accordian__title">Process :</p>
+            <div class="accordian__content">
+                <p>-Every round is an elimination round. Candidates need to clear all rounds to get selected</p>
+                <p>-Round I : 4th August, 2018 </p>
+                <p>-Aptitude Test : 25 Questions</p>
+                <p>-Round II (Interview) : 4th August, 2018.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordian__time" [hidden]="isapplicationBodyVisible">
+        <div class="time__container">
+            <p class="title">Time Slots & Preferences</p><br>
+            <label class="accordian__title">Select a Time Slot :</label><br>
+            <input type="radio" value="9:00 AM to 11:00 AM" name="time" id="time1" [(ngModel)]="userAppliedJobRole.timeSlot"><label for="time1">9:00 AM to 11:00 AM</label><br>
+            <input type="radio" value="1:00 PM to 3:00 PM" name="time" id="time2" [(ngModel)]="userAppliedJobRole.timeSlot"><label for="time2">1:00 PM to 3:00 PM</label>
+        </div>
+        <hr>
+
+        <div class="preference__container">
+            <label class="accordian__title">Select Your Preference :</label><br>
+            @for(preference of jobRole.walkInJob; track preference.id)
+            {
+                <input type="checkbox" [(ngModel)]="userAppliedJobRole.jobPreference[preference.id]" (change)="convertBooleanToIndex()" name="{{preference.roleName}}" id="{{preference.roleName}}"><label for="{{preference.roleName}}">{{preference.roleName}}</label><br>
+            }
+    
+        </div>
+        <hr>
+
+        <label>
+            <input type="file" class="upload__resume" name="resume">
+            <fa-icon [icon]="resumeIcon" class="icon upload_icon"></fa-icon>
+            <a class="upload__resume_link">UPLOAD UPDATED RESUME</a>
+        </label>
+    </div>
+
+    @for(role of jobRole.walkInJob; track role)
+    {
+        
+    <div class="role__accordian" (click)="isJobAccordianVisible(role.id)">
+        <div class="accordian__header">
+            <p>{{role.roleName}}</p>
+            <div>
+                <span class="line"></span>
+                @if(isJobApplicationVisible[role.id]){<fa-icon [icon]="accordianIconDown"
+                    class="icon accordian__icon"></fa-icon>}
+                @else{<fa-icon [icon]="accordianIconUp" class="icon accordian__icon"></fa-icon>}
+            </div>
+        </div>
+    </div>
+
+    <div class="accordian__body" [hidden]="isJobApplicationVisible[role.id]">
+        <div>
+            <p class="accordian__title">gross compensation package :</p>
+            <div class="accordian__content">
+                <p>Rs. {{role.roleCompensation}} lpa</p>
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <p class="accordian__title">Role Description :</p>
+            <div class="accordian__content">
+                @for(description of jobRole.walkInJob[0].roleDescription.split('.'); track description)
+                {
+                    <p>{{description}}</p>
+                }
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+            <p class="accordian__title">MiniRequirements :</p>
+            <div class="accordian__content">
+                @for(requirement of jobRole.walkInJob[0].roleRequirement.split('.'); track requirement)
+                {
+                    <p>{{requirement}}</p>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>

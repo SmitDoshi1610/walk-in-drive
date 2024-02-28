@@ -1,0 +1,21 @@
+@if(currentUrl?.length == 1){
+    <nav class="navbar__container_login">
+        <div class="navbar__left">
+            <img src="../../assets/images/logo.svg" alt="">
+        </div>
+        <div class="navabr__right">
+            <!-- <img src="../../assets/images/logo.svg" alt=""> -->
+        </div>
+    </nav>
+}
+@else {
+    <nav class="navbar__container_all">
+        <div class="navbar__left">
+            <img src="../../assets/images/Zeus-LMS-logo.svg" alt="">
+        </div>
+        <div class="navabr__right">
+            <!-- <img src="../../assets/images/logo.svg" alt=""> -->
+            <h3>{{userName}}</h3>
+        </div>
+    </nav>
+}

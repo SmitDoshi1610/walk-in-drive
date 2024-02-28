@@ -1,0 +1,115 @@
+@import url('../../styles.css');
+
+.container{
+    background-color: #EEEEEE;
+    display: flex;
+    height: calc(100vh - 60px);
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.login__container{
+    background-color: #FFFFFF; 
+    min-width: 20rem;
+    max-width: max-content;
+    min-height: 20rem;
+    padding: 1rem;  
+    border-top: 4px solid var(--border-primary);
+}
+
+.heading{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__container > * {
+
+    margin-bottom: 1rem;
+}
+.form__control input{
+    min-width: fit-content;
+    width: 20rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--background-primary);
+}
+
+input::placeholder{
+    color: #666666;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.forgot__link{
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    float: right;
+    padding-top: 0.25rem;
+}
+
+.password__preview{
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: -20px;
+    display: inline;
+}
+label{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.display__flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__login{
+
+    background-color: var(--primary-color);
+    border: none;
+    min-width: 10rem;
+    min-height: 2rem;
+    box-shadow: 0px 3px 5px #0000003D;
+}
+
+.login__footer{
+    flex-direction: column;
+}
+.login__footer a{
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+}
+
+footer{
+    position: fixed;
+    bottom: 15px;
+    justify-content: center;
+}
+.container__footer *{
+    margin-left: 2rem;
+    font-size: 14px;
+    text-decoration: none;
+    color: #1F7A54;
+    font-weight: 500;
+}
+

@@ -1,0 +1,188 @@
+.job__container {
+    background-color: #EEEEEE;
+    height: max-content;
+    padding: 1rem;
+}
+
+
+.job__card {
+
+    background-color: #FFFFFF;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 4px 6px #0000003D;
+}
+
+.job__card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__card__roles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.job__card__content-time {
+    margin-top: 1rem;
+}
+
+.date__location__container {
+    display: flex;
+    margin-top: 0.125rem;
+    gap: 1rem;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    color: #666666;
+    font-size: 0.75rem;
+}
+
+.location {
+    margin-left: 0.5rem;
+}
+
+.location__img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: black;
+    font-weight: 600;
+}
+
+hr {
+    margin: 1rem 0.125rem;
+    opacity: 0.2;
+}
+
+.job__heading {
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.important__message {
+
+    background-color: #EEDD6B;
+    border-radius: 0.563rem;
+    width: max-content;
+    padding: 0.125rem;
+    font-size: 0.625rem;
+    margin: 0.75rem;
+    font-weight: 600;
+}
+
+.role__container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.role__name {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.list__card__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.btn {
+    width: 4.5rem;
+    height: 1.75rem;
+    background-color: #3FD28B;
+    padding: 0.125rem;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 5px #0000003D;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.error__message {
+    text-align: center;
+    margin: 1rem;
+    color: red;
+}
+
+.application__process_accordian,
+.role__accordian {
+    margin: inherit;
+}
+
+.accordian__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #DBEFFF;
+    padding: 1rem;
+    margin: 1rem;
+    margin-bottom: 0;
+    user-select: none;
+}
+.line {
+    transform: rotate(360deg);
+    width: 1px;
+    border: 1px solid black;
+    margin-right: 1rem;
+    opacity: 0.4;
+}
+.accordian__icon{
+    color: #1F7A54;
+}
+.accordian__body,
+.accordian__time {
+    background-color: #FFFFFF;
+    margin: 0 1rem;
+    padding: 1rem;
+    box-shadow: 0px 4px 6px #0000003D
+}
+.accordian__title{
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.accordian__content{
+    font-size: 0.875rem;
+    color: black;
+    font-weight: 600;
+    text-align: justify;
+}
+.accordian__time{
+    margin-top: 1rem;
+}
+.upload__resume_link {
+
+    margin-left: 0.5rem;
+    color: #1F7A54;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.upload__resume {
+    display: none;
+}
+.upload_icon{
+    color: #1F7A54;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}

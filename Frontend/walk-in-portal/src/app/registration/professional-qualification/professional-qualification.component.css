@@ -1,0 +1,145 @@
+.form__control {
+  margin-bottom: 2rem;
+}
+
+.form__control input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  padding-left: 0.5rem;
+}
+
+label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #666666;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 30rem;
+  height: 1.5rem;
+}
+
+input[type="radio"] {
+  margin-top: 1rem;
+}
+
+.form__control input[type="radio"],
+summary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.upload__resume_link {
+  margin-left: 0.5rem;
+  color: #1f7a54;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.btn__next {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Qualification CSS */
+.qualification__information {
+  margin-top: 1rem;
+}
+.qualification__information__container {
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+
+.qualification__information__container input,
+.qualification__information__container select {
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+}
+details > summary {
+  list-style: none;
+  cursor: pointer;
+  background-color: #dbefff;
+  box-shadow: 0px 4px 6px #00000029;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+details > summary:hover {
+  box-shadow: 0px 4px 6px #1f7a54;
+}
+
+.col-2 {
+  display: flex;
+  gap: 2rem;
+}
+select {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 0.5rem;
+}
+
+.application__type {
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+/* Fresher Qualification Css */
+.fresher__qualification input,
+.fresher__qualification label {
+  margin: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+}
+
+.fresher__qualification__container,
+.experience__qualification__container {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-top: 0.25rem;
+}
+.fresher__qualification__container input,
+.fresher__qualification__container label,
+.experience__qualification__container input,
+.experience__qualification__container label
+{
+   margin: 0.5rem;
+}
+
+.fontStyle *{
+   font-size: 1rem;
+   font-weight: 600;
+   color: black;
+}
+/* Customize the appearance when the checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: #fff;
+}
+
+/* Style the tick mark inside the checkbox when checked */
+input[type="checkbox"]:checked::before {
+  content: '\2713'; /* Unicode character for a checkmark */
+  font-size: 14px; /* Set the size of the checkmark */
+  color: #fff; /* Set the color of the checkmark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
